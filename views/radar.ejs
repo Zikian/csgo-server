@@ -1,60 +1,43 @@
 <body>
-		<div id="mouse-pos">x: 0 y: 0</div>
-		<div class="wrapper">
-				<img id="radar-img">
-				<div id="smokes"></div>
-				<div id="molotovs"></div>
-				<div id="flashes"></div>
-				<div id="grenades"></div>
-		</div>
+	<img id="radar-img">
+	<div id="smokes"></div>
+	<div id="molotovs"></div>
+	<div id="flashes"></div>
+	<div id="grenades"></div>
 </body>
 <style>
-		body {
-			margin: 0;
-		}
+	body {
+		margin: 0;
+	}
 
-		.util-link {
-			position: absolute;
-		}
+	.util-image {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		opacity: 0.7;
+	}
 
-		.wrapper {
-			position: relative;
-		}
-
-		.util-image {
-				width: 50px;
-				height: 50px;
-				opacity: 0.7;
-		}
-
-		.util-image:hover {
-				-webkit-filter: drop-shadow(0px 0px 10px #222);
-				filter: drop-shadow(0px 0px 10px #222);
-		}
+	.util-image:hover {
+		-webkit-filter: drop-shadow(0px 0px 10px #222);
+		filter: drop-shadow(0px 0px 10px #222);
+	}
 </style>
 <script>
-		const nades = <%- JSON.stringify(nades) %>;
-		document.getElementById('radar-img').src = "resources/<%- radarImg %>"
+	const nades = <%- JSON.stringify(nades) %>;
+	document.getElementById('radar-img').src = "resources/<%- radarImg %>"
 
-		nades.smokes.forEach(nade => addNade(nade, "smokes"));
-		nades.grenades.forEach(nade => addNade(nade, "grenades"));
-		nades.molotovs.forEach(nade => addNade(nade, "molotovs"));
-		nades.flashes.forEach(nade => addNade(nade, "flashes"));
+	nades.smokes.forEach(nade => addNade(nade, "smokes", "SmokeIcon.svg"));
+	nades.grenades.forEach(nade => addNade(nade, "grenades", "GrenadeIcon.svg"));
+	nades.molotovs.forEach(nade => addNade(nade, "molotovs", "MolotovIcon.svg"));
+	nades.flashes.forEach(nade => addNade(nade, "flashes", "FlashIcon.svg"));
 
-		function addNade(nade, wrapperString) {
-			const link = document.createElement("a")
-			const img = document.createElement("img")
-			link.href = nade.href
-			link.style.left = nade.left + "px"
-			link.style.top = nade.top + "px"
-			link.className = "util-link"
-			img.className = "util-image"
-			img.src = "resources/SmokeIcon.svg"
-			link.appendChild(img)
-			document.getElementById(wrapperString).appendChild(link)
-		}
-
-		document.addEventListener("mousemove", event => {
-				document.getElementById('mouse-pos').innerHTML = `x: ${event.clientX - 25} y: ${event.clientY - 45}`
-		})
+	function addNade(nade, wrapperString, icon) {
+		const img = document.createElement("img")
+		img.style.left = nade.left + "px"
+		img.style.top = nade.top + "px"
+		img.className = "util-image"
+		img.onclick = () => { window.location.href = nade.href}
+		img.src = "resources/SmokeIcon.svg"
+		document.getElementById(wrapperString).appendChild(img)
+	}
 </script>
