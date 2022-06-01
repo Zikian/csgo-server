@@ -1,0 +1,60 @@
+<body>
+		<div id="mouse-pos">x: 0 y: 0</div>
+		<div class="wrapper">
+				<img id="radar-img">
+				<div id="smokes"></div>
+				<div id="molotovs"></div>
+				<div id="flashes"></div>
+				<div id="grenades"></div>
+		</div>
+</body>
+<style>
+		body {
+			margin: 0;
+		}
+
+		.util-link {
+			position: absolute;
+		}
+
+		.wrapper {
+			position: relative;
+		}
+
+		.util-image {
+				width: 50px;
+				height: 50px;
+				opacity: 0.7;
+		}
+
+		.util-image:hover {
+				-webkit-filter: drop-shadow(0px 0px 10px #222);
+				filter: drop-shadow(0px 0px 10px #222);
+		}
+</style>
+<script>
+		const nades = <%- JSON.stringify(nades) %>;
+		document.getElementById('radar-img').src = "resources/<%- radarImg %>"
+
+		nades.smokes.forEach(nade => addNade(nade, "smokes"));
+		nades.grenades.forEach(nade => addNade(nade, "grenades"));
+		nades.molotovs.forEach(nade => addNade(nade, "molotovs"));
+		nades.flashes.forEach(nade => addNade(nade, "flashes"));
+
+		function addNade(nade, wrapperString) {
+			const link = document.createElement("a")
+			const img = document.createElement("img")
+			link.href = nade.href
+			link.style.left = nade.left + "px"
+			link.style.top = nade.top + "px"
+			link.className = "util-link"
+			img.className = "util-image"
+			img.src = "resources/SmokeIcon.svg"
+			link.appendChild(img)
+			document.getElementById(wrapperString).appendChild(link)
+		}
+
+		document.addEventListener("mousemove", event => {
+				document.getElementById('mouse-pos').innerHTML = `x: ${event.clientX - 25} y: ${event.clientY - 45}`
+		})
+</script>
