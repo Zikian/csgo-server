@@ -1,28 +1,17 @@
 {
 	"smokes": [
-		{
-			"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Top%20Mid%20Smoke",
-			"left": 461,
-			"top": 358
-		},
-		{
-			"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Back%20Alley%20Smoke",
-			"left":461,
-			"top":358
-		}
-
+		{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Top%20Mid%20Smoke","left": 461,"top": 358},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Back%20Alley%20Smoke","left":461,"top":358}
 	],
 	"molotovs": [
-		{
-			"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Molotov",
-			"left":461,
-			"top":358
-		}
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Molotov","left":805,"top":563},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Tomb%20Molotov","left":432,"top":451}
 	],
 	"flashes": [
-		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Flash","left":461,"top":358}
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Flash","left":815,"top":476},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Mid%20Flash%20From%20T%20Spawn%201","left":441,"top":583}
 	],
 	"grenades": [
-		
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Nade","left":805,"top":565}
 	]
 }
