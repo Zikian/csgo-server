@@ -27,9 +27,9 @@
 	document.getElementById('radar-img').src = "resources/<%- radarImg %>"
 
 	nades.smokes.forEach(nade => addNade(nade, "smokes", "SmokeIcon.svg"));
-	nades.grenades.forEach(nade => addNade(nade, "grenades", "GrenadeIcon.svg"));
 	nades.molotovs.forEach(nade => addNade(nade, "molotovs", "MolotovIcon.svg"));
 	nades.flashes.forEach(nade => addNade(nade, "flashes", "FlashIcon.svg"));
+	nades.grenades.forEach(nade => addNade(nade, "grenades", "GrenadeIcon.svg"));
 
 	function addNade(nade, wrapperString, icon) {
 		const img = document.createElement("img")

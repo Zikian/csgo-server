@@ -25,6 +25,18 @@ app.get('/overpass', function(req, res) {
 	res.render('radar.ejs', {nades : overpassNades, radarImg: "Overpass.png"})
 })
 
+app.get('/ancient/edit', function(req, res) {
+	res.render('radaredit.ejs', {nades : ancientNades, radarImg: "Ancient.png"})
+})
+
+app.get('/mirage/edit', function(req, res) {
+	res.render('radaredit.ejs', {nades : mirageNades, radarImg: "Mirage.png"})
+})
+
+app.get('/overpass/edit', function(req, res) {
+	res.render('radaredit.ejs', {nades : overpassNades, radarImg: "Overpass.png"})
+})
+
 app.listen(app.get('port'), function () {
   console.log('App is running on port: ' + app.get('port'))
 })
