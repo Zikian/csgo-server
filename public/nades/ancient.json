@@ -4,13 +4,23 @@
 			"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Top%20Mid%20Smoke",
 			"left": 461,
 			"top": 358
+		},
+		{
+			"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Back%20Alley%20Smoke",
+			"left":461,
+			"top":358
 		}
+
 	],
 	"molotovs": [
-		
+		{
+			"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Molotov",
+			"left":461,
+			"top":358
+		}
 	],
 	"flashes": [
-		
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Flash","left":461,"top":358}
 	],
 	"grenades": [
 		

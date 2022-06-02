@@ -34,8 +34,8 @@
 	radarImg.addEventListener("click", event => {
 		lastPlaced = {
 			"href": "",
-			"left": 461,
-			"top": 358
+			"left": clamp(event.clientX - 27),
+			"top": clamp(event.clientY - 29)
 		}
 		addNade(
 			clamp(event.clientX - 27), 
