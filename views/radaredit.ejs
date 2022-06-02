@@ -1,97 +1,37 @@
-<body>
-	<div id="main-wrapper">
-		<img id="radar-img">
-		<div id="side-wrapper">
-			<div class="type-selector">
+<html>
+	<head><link href="/css/style.css" rel="stylesheet" type="text/css"></head>
+	<body>
+		<div class="radar-wrapper">
+			<div class="type-selector five-selector">
 				<button id="smokes-button" onclick="switchType('smokes')">Smokes</button>
 				<button id="molotovs-button"  onclick="switchType('molotovs')">Molotovs</button>
 				<button id="flashes-button"  onclick="switchType('flashes')">Flashes</button>
 				<button id="grenades-button"  onclick="switchType('grenades')">Grenades</button>
-			</div>
-			<div id="json-retriever">
 				<button onclick="copyJSON()" class="json-button">Copy JSON to clipboard</button>
 			</div>
+			<img id="radar-img">
 		</div>
-	</div>
-	<img id="util-placer">
-	<div id="smokes"></div>
-	<div id="molotovs"></div>
-	<div id="flashes"></div>
-	<div id="grenades"></div>
-</body>
-<style>
-	body {
-		margin: 0;
-		background-color: white;
-	}
-
-	.util-image, #util-placer {
-		position: absolute;
-		width: 50px;
-		height: 50px;
-		opacity: 0.7;
-		pointer-events: none;
-	}
-
-	.util-image:hover {
-		-webkit-filter: drop-shadow(0px 0px 10px #222);
-		filter: drop-shadow(0px 0px 10px #222);
-	}
-
-	#main-wrapper {
-		display: grid;
-		grid-template-columns: 1028px 1fr;
-	}
-
-	#side-wrapper {
-		width: 250px;
-		padding-top: 70px;
-		display: grid;
-		grid-template-rows: 150px 1fr;
-		justify-content: center;
-		align-content: center;
-	}
-
-	.type-selector {
-		height: 60px;
-		display: grid;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-		justify-content: center;
-		align-content: center;
-	}
-
-	button {
-		width: 100px;
-		height: 30px;
-		background: transparent;
-		border: none;
-		outline: 1px solid black;
-		border-radius: 10px;
-		margin: 5px 0;
-	}
-
-	button:active {
-		background-color: rgba(0, 94, 173, 0.56);
-	}
-
-	.json-button {
-		width: 200px;
-	}
-
-	.selected {
-		background-color: rgba(34, 154, 255, 0.56);
-	}
-</style>
+		<img id="util-placer">
+		<div id="smokes"></div>
+		<div id="molotovs"></div>
+		<div id="flashes"></div>
+		<div id="grenades"></div>
+	</body>
+</html>
 <script>
 	let lastPlaced = "";
 	const nades = <%- JSON.stringify(nades) %>;
-	
+	nades.smokes.forEach(nade => addNade(nade.left, nade.top, "smokes", "../resources/SmokeIcon.svg"));
+	nades.grenades.forEach(nade => addNade(nade.left, nade.top, "grenades", "../resources/GrenadeIcon.svg"));
+	nades.molotovs.forEach(nade => addNade(nade.left, nade.top, "molotovs", "../resources/MolotovIcon.svg"));
+	nades.flashes.forEach(nade => addNade(nade.left, nade.top, "flashes", "../resources/FlashIcon.svg"));
 	const utilPlacer = document.getElementById('util-placer')
-	switchType("smokes")
-
 	const radarImg = document.getElementById('radar-img')
 	radarImg.src = "../resources/<%- radarImg %>"
-	radarImg.onclick = event => {
+
+	switchType("smokes")
+
+	radarImg.addEventListener("click", event => {
 		lastPlaced = {
 			"href": "",
 			"left": 461,
@@ -103,12 +43,12 @@
 			selectedNade, 
 			utilPlacer.src
 		)
-	}
+	})
 
-	nades.smokes.forEach(nade => addNade(nade.left, nade.top, "smokes", "../resources/SmokeIcon.svg"));
-	nades.grenades.forEach(nade => addNade(nade.left, nade.top, "grenades", "../resources/GrenadeIcon.svg"));
-	nades.molotovs.forEach(nade => addNade(nade.left, nade.top, "molotovs", "../resources/MolotovIcon.svg"));
-	nades.flashes.forEach(nade => addNade(nade.left, nade.top, "flashes", "../resources/FlashIcon.svg"));
+	document.addEventListener("mousemove", event => {
+		document.getElementById('util-placer').style.left = clamp(event.clientX - 27) + "px"
+		document.getElementById('util-placer').style.top = clamp(event.clientY - 29) + "px"
+	})
 
 	function addNade(x, y, wrapperString, icon) {
 		const img = document.createElement("img")
@@ -150,11 +90,11 @@
 	}
 
 	function showNades(type) {
-		document.getElementById('molotovs').display = "none"
-		document.getElementById('smokes').display = "none"
-		document.getElementById('flashes').display = "none"
-		document.getElementById('grenades').display = "none"
-		document.getElementById(type).display = "block"
+		document.getElementById('smokes').style.display = "none"
+		document.getElementById('molotovs').style.display = "none"
+		document.getElementById('flashes').style.display = "none"
+		document.getElementById('grenades').style.display = "none"
+		document.getElementById(type).style.display = "block"
 	}
 
 	function copyJSON() {
@@ -165,9 +105,4 @@
 		document.execCommand('copy');
 		document.body.removeChild(elem);
 	}
-
-	document.addEventListener("mousemove", event => {
-		document.getElementById('util-placer').style.left = clamp(event.clientX - 27) + "px"
-		document.getElementById('util-placer').style.top = clamp(event.clientY - 29) + "px"
-	})
 </script>

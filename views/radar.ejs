@@ -1,27 +1,21 @@
-<body>
-	<img id="radar-img">
-	<div id="smokes"></div>
-	<div id="molotovs"></div>
-	<div id="flashes"></div>
-	<div id="grenades"></div>
-</body>
-<style>
-	body {
-		margin: 0;
-	}
-
-	.util-image {
-		position: absolute;
-		width: 50px;
-		height: 50px;
-		opacity: 0.7;
-	}
-
-	.util-image:hover {
-		-webkit-filter: drop-shadow(0px 0px 10px #222);
-		filter: drop-shadow(0px 0px 10px #222);
-	}
-</style>
+<html>
+	<head><link href="/css/style.css" rel="stylesheet" type="text/css"></head>
+	<body>
+		<div class="radar-wrapper">
+			<div class="type-selector">
+				<button id="smokes-button" onclick="switchType('smokes')">Smokes</button>
+				<button id="molotovs-button"  onclick="switchType('molotovs')">Molotovs</button>
+				<button id="flashes-button"  onclick="switchType('flashes')">Flashes</button>
+				<button id="grenades-button"  onclick="switchType('grenades')">Grenades</button>
+			</div>
+			<img id="radar-img">
+		</div>
+		<div id="smokes"></div>
+		<div id="molotovs"></div>
+		<div id="flashes"></div>
+		<div id="grenades"></div>
+	</body>
+</html>
 <script>
 	const nades = <%- JSON.stringify(nades) %>;
 	document.getElementById('radar-img').src = "resources/<%- radarImg %>"
@@ -30,6 +24,7 @@
 	nades.molotovs.forEach(nade => addNade(nade, "molotovs", "MolotovIcon.svg"));
 	nades.flashes.forEach(nade => addNade(nade, "flashes", "FlashIcon.svg"));
 	nades.grenades.forEach(nade => addNade(nade, "grenades", "GrenadeIcon.svg"));
+	switchType("smokes")
 
 	function addNade(nade, wrapperString, icon) {
 		const img = document.createElement("img")
@@ -39,5 +34,27 @@
 		img.onclick = () => { window.location.href = nade.href}
 		img.src = "resources/SmokeIcon.svg"
 		document.getElementById(wrapperString).appendChild(img)
+	}
+
+	function switchType(type) {
+		selectButton(type)
+		showNades(type)
+	}
+
+	function selectButton(type) {
+		document.getElementById('molotovs-button').className = ""
+		document.getElementById('smokes-button').className = ""
+		document.getElementById('flashes-button').className = ""
+		document.getElementById('grenades-button').className = ""
+		document.getElementById(type + '-button').className = "selected"
+	}
+
+	function showNades(type) {
+		console.log(type)
+		document.getElementById('smokes').style.display = "none"
+		document.getElementById('molotovs').style.display = "none"
+		document.getElementById('flashes').style.display = "none"
+		document.getElementById('grenades').style.display = "none"
+		document.getElementById(type).style.display = "block"
 	}
 </script>

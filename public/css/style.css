@@ -1,0 +1,95 @@
+body {
+	margin: 0;
+	background-color: white;
+}
+
+.util-image, #util-placer {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	opacity: 0.7;
+}
+
+#util-placer {
+	pointer-events: none;
+}
+
+.util-image:hover {
+	-webkit-filter: drop-shadow(0px 0px 10px #222);
+	filter: drop-shadow(0px 0px 10px #222);
+}
+
+.util-image:hover {
+	-webkit-filter: drop-shadow(0px 0px 10px #222);
+	filter: drop-shadow(0px 0px 10px #222);
+}
+
+#main-wrapper {
+	display: grid;
+	grid-template-columns: 1028px 1fr;
+}
+
+#side-wrapper {
+	width: 250px;
+	padding-top: 70px;
+	display: grid;
+	grid-template-rows: 150px 1fr;
+	justify-content: center;
+	align-content: center;
+}
+
+#radar-img {
+	position: absolute;
+}
+
+.radar-wrapper {
+	display: grid;
+	grid-template-rows: 60px 1fr;
+	width: 1024px;
+}
+
+.type-selector {
+	z-index: 2;
+	width: 500px;
+	height: 60px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin: auto;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+
+.five-selector {
+	width: 700px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.radar-wrapper button {
+	border: 1px solid white;
+	color: white;
+}
+
+button {
+	width: 100px;
+	height: 30px;
+	background: transparent;
+	border: none;
+	outline: 1px solid black;
+	border-radius: 10px;
+	margin: 5px 0;
+	background-color: black;
+}
+
+.json-button {
+	width: 200px;
+}
+
+.json-button:active {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.selected {
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 1px solid white;
+	color: black;
+}
