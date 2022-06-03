@@ -21,6 +21,7 @@
 	],
 	"grenades": [
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Nade","left":805,"top":565},
-		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Cubby%20Nade%20From%20Cave","left":704,"top":546}
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Cubby%20Nade%20From%20Cave","left":704,"top":546},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Lane%20Grenade%20From%20Alley","left":749,"top":558}
 	]
 }
