@@ -8,10 +8,11 @@
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20CT%20Smoke%20From%20Ramp","left":436,"top":795}
 	],
 	"molotovs": [
-		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Triple%20Box%20Molotov%20from%20Tetris","left":471,"top":743}
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Triple%20Box%20Molotov%20from%20Tetris","left":471,"top":743},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Palace","left":633,"top":716}
 	],
 	"flashes": [
-		
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Tetris%20Flash%20from%20Shadows","left":629,"top":658}
 	],
 	"grenades": [
 		
