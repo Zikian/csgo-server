@@ -1,6 +1,11 @@
 {
 	"smokes": [
-
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FArch%20left%20smoke","left":322,"top":277},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FArch%20right%20smoke","left":321,"top":222},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FCT%20smoke%20from%20ramp","left":436,"top":795},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FJungle%20smoke%20from%20ramp","left":487,"top":640},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FRamp%20smoke%20from%20ct","left":668,"top":619},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FStairs%20smoke%20from%20ramp","left":529,"top":631}
 	],
 	"molotovs": [
 		
