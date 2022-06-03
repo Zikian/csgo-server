@@ -6,7 +6,8 @@
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Arch%20Right%20Smoke%20From%20Apps","left":321,"top":222},
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Jungle%20Smoke%20From%20Ramp","left":487,"top":640},
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20CT%20Smoke%20From%20Ramp","left":436,"top":795},
-		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Short%20Smoke%20From%20Underpass","left":455,"top":342}
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Short%20Smoke%20From%20Underpass","left":455,"top":342},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Bench%20Retake%20Smoke%20from%20CT%20Spawn","left":153,"top":297}
 	],
 	"molotovs": [
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Triple%20Box%20Molotov%20from%20Tetris","left":471,"top":743},
