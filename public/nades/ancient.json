@@ -9,7 +9,8 @@
 	"molotovs": [
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Molotov","left":805,"top":563},
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Tomb%20Molotov","left":432,"top":451},
-		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Ninja%20Molotov%20from%20B%20Doors","left":701,"top":462}
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Ninja%20Molotov%20from%20B%20Doors","left":701,"top":462},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Lane%20Molotov%20From%20Alley","left":726,"top":556}
 	],
 	"flashes": [
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Flash","left":815,"top":476},
@@ -19,6 +20,7 @@
 		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Cheetah%20Flash%20from%20Upper%20B%20Long","left":607,"top":520}
 	],
 	"grenades": [
-		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Nade","left":805,"top":565}
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Nade","left":805,"top":565},
+		{"href":"obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Cubby%20Nade%20From%20Cave","left":704,"top":546}
 	]
 }
