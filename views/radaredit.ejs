@@ -1,108 +1,21 @@
 <html>
-	<head><link href="/css/style.css" rel="stylesheet" type="text/css"></head>
+	<head>
+		<link href="/css/style.css" rel="stylesheet" type="text/css">
+	</head>
 	<body>
 		<div class="radar-wrapper">
-			<div class="type-selector five-selector">
-				<button id="smokes-button" onclick="switchType('smokes')">Smokes</button>
-				<button id="molotovs-button"  onclick="switchType('molotovs')">Molotovs</button>
-				<button id="flashes-button"  onclick="switchType('flashes')">Flashes</button>
-				<button id="grenades-button"  onclick="switchType('grenades')">Grenades</button>
-				<button onclick="copyJSON()" class="json-button">Copy JSON to clipboard</button>
-			</div>
-			<img id="radar-img">
+			<img id="radar-img" draggable="false">
 		</div>
-		<img id="util-placer">
-		<div id="smokes"></div>
-		<div id="molotovs"></div>
-		<div id="flashes"></div>
-		<div id="grenades"></div>
 	</body>
 </html>
 <script>
-	let lastPlaced = "";
-	const nades = <%- JSON.stringify(nades) %>;
-	nades.smokes.forEach(nade => addNade(nade.left, nade.top, "smokes", "../resources/SmokeIcon.svg"));
-	nades.grenades.forEach(nade => addNade(nade.left, nade.top, "grenades", "../resources/GrenadeIcon.svg"));
-	nades.molotovs.forEach(nade => addNade(nade.left, nade.top, "molotovs", "../resources/MolotovIcon.svg"));
-	nades.flashes.forEach(nade => addNade(nade.left, nade.top, "flashes", "../resources/FlashIcon.svg"));
-	const utilPlacer = document.getElementById('util-placer')
-	const radarImg = document.getElementById('radar-img')
-	radarImg.src = "../resources/<%- radarImg %>"
+	document.getElementById('radar-img').src = "resources/<%- radarImg %>"
 
-	switchType("smokes")
+	nades.smokes.forEach(nade => addNade(nade, "smokes", "SmokeIcon.svg"));
+	nades.molotovs.forEach(nade => addNade(nade, "molotovs", "MolotovIcon.svg"));
+	nades.flashes.forEach(nade => addNade(nade, "flashes", "FlashIcon.svg"));
+	nades.grenades.forEach(nade => addNade(nade, "grenades", "GrenadeIcon.svg"));
+	switchType("molotovs")
 
-	radarImg.addEventListener("click", event => {
-		lastPlaced = {
-			"href": "",
-			"left": clamp(event.clientX - 27),
-			"top": clamp(event.clientY - 29)
-		}
-		addNade(
-			clamp(event.clientX - 27), 
-			clamp(event.clientY - 29),
-			selectedNade, 
-			utilPlacer.src
-		)
-	})
-
-	document.addEventListener("mousemove", event => {
-		document.getElementById('util-placer').style.left = clamp(event.clientX - 27) + "px"
-		document.getElementById('util-placer').style.top = clamp(event.clientY - 29) + "px"
-	})
-
-	function addNade(x, y, wrapperString, icon) {
-		const img = document.createElement("img")
-		img.style.left = x + "px"
-		img.style.top = y + "px"
-		img.className = "util-image"
-		img.src = icon
-		document.getElementById(wrapperString).appendChild(img)
-	}
-
-	function clamp(x) {
-  	return Math.max(0, Math.min(974, x));
-	}
 	
-	function switchType(type) {
-		selectedNade = type
-		if (selectedNade == "smokes") {
-			utilPlacer.src = "../resources/SmokeIcon.svg"
-		}
-		if (selectedNade == "molotovs") {
-			utilPlacer.src = "../resources/MolotovIcon.svg"
-		}
-		if (selectedNade == "flashes") {
-			utilPlacer.src = "../resources/FlashIcon.svg"
-		}
-		if (selectedNade == "grenades") {
-			utilPlacer.src = "../resources/GrenadeIcon.svg"
-		}
-		selectButton(type)
-		showNades(type)
-	}
-
-	function selectButton(type) {
-		document.getElementById('molotovs-button').className = ""
-		document.getElementById('smokes-button').className = ""
-		document.getElementById('flashes-button').className = ""
-		document.getElementById('grenades-button').className = ""
-		document.getElementById(type + '-button').className = "selected"
-	}
-
-	function showNades(type) {
-		document.getElementById('smokes').style.display = "none"
-		document.getElementById('molotovs').style.display = "none"
-		document.getElementById('flashes').style.display = "none"
-		document.getElementById('grenades').style.display = "none"
-		document.getElementById(type).style.display = "block"
-	}
-
-	function copyJSON() {
-		const elem = document.createElement('textarea');
-		elem.value = JSON.stringify(lastPlaced);
-		document.body.appendChild(elem);
-		elem.select();
-		document.execCommand('copy');
-		document.body.removeChild(elem);
-	}
 </script>
