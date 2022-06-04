@@ -46,8 +46,8 @@
 			"x": 455,
 			"y": 342,
 			"locations": [
-				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Catwalk%20Smoke%20From%20Underpass","x":443,"y":404},
-				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Catwalk%20Smoke%20from%20Top%20Mid","x":706,"y":471}
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Catwalk%20Smoke%20from%20Top%20Mid","x":706,"y":471},
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Catwalk%20Smoke%20From%20Underpass","x":443,"y":404}
 			]
 		},
 		{
@@ -70,8 +70,8 @@
 			"x": 633,
 			"y": 716,
 			"locations": [
-				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Palace","x": 736,"y": 758},
-				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Tetris","x": 612,"y": 597}
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Palace","x":752,"y":775},
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Tetris","x":626,"y":614}
 			]
 		}
 	],

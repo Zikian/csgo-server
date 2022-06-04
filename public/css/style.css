@@ -132,7 +132,7 @@ button {
 }
 
 .util-location, .location-placer {
-	position: absolute;
+	position: fixed;
 	z-index: 50;
 	width: 20px;
 	height: 20px;
