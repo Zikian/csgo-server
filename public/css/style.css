@@ -2,6 +2,8 @@ body {
 	position: relative;
 	margin: 0;
 	background-color: white;
+	width: 1024;
+	height: 1024;
 }
 
 #util-placer {
@@ -47,6 +49,7 @@ body {
 	display: grid;
 	grid-template-rows: 60px 1fr;
 	width: 1024px;
+	height: 1024px;
 }
 
 .type-selector {
