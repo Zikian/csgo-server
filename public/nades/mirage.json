@@ -4,8 +4,8 @@
 			"x":392,
 			"y":441,
 			"locations":[
-				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Mid%20Window%20Smoke%20from%20T%20Spawn","x":392,"y":441},
 				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Mid%20Window%20Smoke%20from%20Underpass","x":435,"y":405},
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Mid%20Window%20Smoke%20from%20T%20Spawn","x":923,"y":325},
 				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Mid%20Window%20Smoke%20From%20Top%20Mid","x":740,"y":472}
 			]
 		},
