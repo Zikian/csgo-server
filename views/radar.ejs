@@ -1,5 +1,10 @@
 <html>
-	<head><link href="/css/style.css" rel="stylesheet" type="text/css"></head>
+	<head>
+		<link href="/css/style.css" rel="stylesheet" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+	</head>
 	<body>
 		<div class="radar-wrapper">
 			<div class="type-selector">
@@ -8,7 +13,8 @@
 				<button id="flashes-button"  onclick="switchType('flashes')">Flashes</button>
 				<button id="grenades-button"  onclick="switchType('grenades')">Grenades</button>
 			</div>
-			<img id="radar-img">
+			<img id="radar-img" draggable="false">
+			<canvas width="1028" height="1028"></canvas>
 		</div>
 		<div id="smokes"></div>
 		<div id="molotovs"></div>
@@ -17,6 +23,8 @@
 	</body>
 </html>
 <script>
+	const canvas = document.getElementsByTagName("canvas")[0]
+	const ctx = canvas.getContext('2d')
 	const nades = <%- JSON.stringify(nades) %>;
 	document.getElementById('radar-img').src = "resources/<%- radarImg %>"
 
@@ -24,16 +32,50 @@
 	nades.molotovs.forEach(nade => addNade(nade, "molotovs", "MolotovIcon.svg"));
 	nades.flashes.forEach(nade => addNade(nade, "flashes", "FlashIcon.svg"));
 	nades.grenades.forEach(nade => addNade(nade, "grenades", "GrenadeIcon.svg"));
-	switchType("smokes")
+	switchType("molotovs")
 
 	function addNade(nade, wrapperString, icon) {
+		const utilWrapper = document.createElement("div")
+		utilWrapper.className = 'util-wrapper'
+		utilWrapper.style.left = nade.x + "px"
+		utilWrapper.style.top = nade.y + "px"
+		if (nade.locations.length === 1) {
+			utilWrapper.onclick = () => { window.location.href = nade.locations[0].href}
+		} else {
+			utilWrapper.addEventListener("click", () => {
+				if (!utilWrapper.isOpen) {
+					showLocations(nade, utilWrapper)
+					utilWrapper.isOpen = true
+				} else {
+					hideLocations(utilWrapper)
+					utilWrapper.isOpen = false
+				}
+			})
+		}
+		
+		const utilLocations = document.createElement("div")
+		utilLocations.className = 'util-locations'
+		utilLocations.innerHTML = nade.locations.length > 1 ? nade.locations.length : ""
+		
 		const img = document.createElement("img")
-		img.style.left = nade.left + "px"
-		img.style.top = nade.top + "px"
+		img.draggable = false
 		img.className = "util-image"
-		img.onclick = () => { window.location.href = nade.href}
 		img.src = "resources/" + icon
-		document.getElementById(wrapperString).appendChild(img)
+
+		console.log(nade.locations.length)
+		nade.locations.forEach(location => {
+			const utilLocation = document.createElement("div")
+			utilLocation.className = 'util-location'
+			utilLocation.style.display = 'none'
+			utilLocation.onclick = () => { 
+				window.location.href = location.href
+			}
+			utilWrapper.appendChild(utilLocation)
+		})
+		
+		utilWrapper.appendChild(img)
+		utilWrapper.appendChild(utilLocations)
+		document.getElementById(wrapperString).appendChild(utilWrapper)
 	}
 
 	function switchType(type) {
@@ -55,5 +97,48 @@
 		document.getElementById('flashes').style.display = "none"
 		document.getElementById('grenades').style.display = "none"
 		document.getElementById(type).style.display = "block"
+	}
+
+	function showLocations(nade, utilWrapper) {
+		const nadeX = nade.x
+		const nadeY = nade.y
+		let distancePercent = 0.1
+		const utilLocations = utilWrapper.getElementsByClassName('util-location')
+
+		const interval = setInterval(() => {
+			clearCanvas()
+			for (let i = 0; i < utilLocations.length; i++) {
+				const locationX = nade.locations[i].x
+				const locationY = nade.locations[i].y
+				const vectorX = locationX - nadeX
+				const vectorY = locationY - nadeY
+				utilLocations[i].style.left = vectorX * distancePercent + 17 + "px"
+				utilLocations[i].style.top = vectorY * distancePercent + 17	 + "px"
+				utilLocations[i].style.display = "block"
+
+				ctx.beginPath();
+				ctx.strokeStyle = "white";
+				ctx.lineWidth = 2;
+				ctx.moveTo(nadeX + 25, nadeY + 25);
+				ctx.lineTo(nadeX + vectorX * distancePercent + 27, nadeY + vectorY * distancePercent + 27);
+				ctx.stroke(); 
+			}
+			distancePercent += 0.02
+			if (distancePercent > 1) clearInterval(interval)
+		}, 1);
+	}
+
+	function hideLocations(utilWrapper) {
+		const utilLocations = utilWrapper.getElementsByClassName('util-location')
+		clearCanvas()
+		for (let i = 0; i < utilLocations.length; i++) {
+			utilLocations[i].style.left = 0
+			utilLocations[i].style.top = 0
+			utilLocations[i].style.display = 'none'
+		}
+	}
+
+	function clearCanvas() {
+		canvas.width = canvas.width
 	}
 </script>

@@ -1,9 +1,10 @@
 body {
+	position: relative;
 	margin: 0;
 	background-color: white;
 }
 
-.util-image, #util-placer {
+#util-placer {
 	position: absolute;
 	width: 50px;
 	height: 50px;
@@ -92,4 +93,57 @@ button {
 	background-color: rgba(255, 255, 255, 0.5);
 	border: 1px solid white;
 	color: black;
+}
+
+.util-wrapper {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+}
+
+.util-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	opacity: 0.7;
+	user-select: none;
+}
+
+.util-locations {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 49px;
+	line-height: 51px;
+	z-index: 2;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+	font-family: 'Lato', sans-serif;
+	pointer-events: none;
+	user-select: none;
+}
+
+.util-location {
+	position: absolute;
+	z-index: 50;
+	width: 20px;
+	height: 20px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	outline: 3px solid white;  
+}
+
+.util-location:hover {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+canvas {
+	position: absolute;
+	z-index: 9;
+	pointer-events: none;
 }
