@@ -84,7 +84,7 @@
 	}
 
 	function switchType(type) {
-		if (openLocations) hideLocations(openLocations)
+		hideLocations(openLocations)
 		selectButton(type)
 		showNades(type)
 	}
@@ -135,6 +135,7 @@
 	}
 
 	function hideLocations(utilWrapper) {
+		if (!utilWrapper) return
 		const utilLocations = utilWrapper.getElementsByClassName('util-location')
 		clearCanvas()
 		for (let i = 0; i < utilLocations.length; i++) {
