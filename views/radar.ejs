@@ -49,6 +49,7 @@
 		} else {
 			utilWrapper.addEventListener("click", () => {
 				if (!utilWrapper.isOpen) {
+					hideLocations(openLocations)
 					showLocations(nade, utilWrapper)
 					openLocations = utilWrapper
 					utilWrapper.isOpen = true
