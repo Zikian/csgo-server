@@ -2,16 +2,18 @@
 	<head><link href="/css/style.css" rel="stylesheet" type="text/css"></head>
 	<body>
 		<div class="radar-wrapper">
-			<div class="type-selector five-selector">
+			<div class="type-selector six-selector">
 				<button id="smokes-button" onclick="switchType('smokes')">Smokes</button>
 				<button id="molotovs-button"  onclick="switchType('molotovs')">Molotovs</button>
 				<button id="flashes-button"  onclick="switchType('flashes')">Flashes</button>
 				<button id="grenades-button"  onclick="switchType('grenades')">Grenades</button>
+				<button id="location-button"  onclick="switchType('location')">Location</button>
 				<button onclick="copyJSON()" class="json-button">Copy JSON to clipboard</button>
 			</div>
 			<img id="radar-img">
 		</div>
 		<img id="util-placer">
+		<div class="location-placer"></div>
 		<div id="smokes"></div>
 		<div id="molotovs"></div>
 		<div id="flashes"></div>
@@ -20,34 +22,54 @@
 </html>
 <script>
 	let lastPlaced = "";
+	let selectedNade = "";
 	const nades = <%- JSON.stringify(nades) %>;
-	nades.smokes.forEach(nade => addNade(nade.left, nade.top, "smokes", "../resources/SmokeIcon.svg"));
-	nades.grenades.forEach(nade => addNade(nade.left, nade.top, "grenades", "../resources/GrenadeIcon.svg"));
-	nades.molotovs.forEach(nade => addNade(nade.left, nade.top, "molotovs", "../resources/MolotovIcon.svg"));
-	nades.flashes.forEach(nade => addNade(nade.left, nade.top, "flashes", "../resources/FlashIcon.svg"));
 	const utilPlacer = document.getElementById('util-placer')
 	const radarImg = document.getElementById('radar-img')
-	radarImg.src = "../resources/<%- radarImg %>"
-
+	const locationPlacer = document.getElementsByClassName('location-placer')[0]
+	
+	nades.smokes.forEach(nade => addNade(nade.x, nade.y, "smokes", "../resources/SmokeIcon.svg"));
+	nades.grenades.forEach(nade => addNade(nade.x, nade.y, "grenades", "../resources/GrenadeIcon.svg"));
+	nades.molotovs.forEach(nade => addNade(nade.x, nade.y, "molotovs", "../resources/MolotovIcon.svg"));
+	nades.flashes.forEach(nade => addNade(nade.x, nade.y, "flashes", "../resources/FlashIcon.svg"));
 	switchType("smokes")
-
+	
+	radarImg.src = "../resources/<%- radarImg %>"
 	radarImg.addEventListener("click", event => {
-		lastPlaced = {
-			"href": "",
-			"left": clamp(event.clientX - 27),
-			"top": clamp(event.clientY - 29)
+		if (selectedNade === "location") {
+			lastPlaced = {
+				href: "",
+				x: clamp(event.clientX - 11),
+				y: clamp(event.clientY - 11)
+			}
+		} else {
+			lastPlaced = {
+				x: clamp(event.clientX - 27),
+				y: clamp(event.clientY - 29),
+				locations: [
+					{
+						href: "",
+						x: 0,
+						y: 0
+					}
+				]
+			}
 		}
-		addNade(
-			clamp(event.clientX - 27), 
-			clamp(event.clientY - 29),
-			selectedNade, 
-			utilPlacer.src
-		)
+		if (selectedNade !== "location") {
+			addNade(
+				clamp(event.clientX - 27), 
+				clamp(event.clientY - 29),
+				selectedNade, 
+				utilPlacer.src
+			)
+		}
 	})
 
 	document.addEventListener("mousemove", event => {
-		document.getElementById('util-placer').style.left = clamp(event.clientX - 27) + "px"
-		document.getElementById('util-placer').style.top = clamp(event.clientY - 29) + "px"
+		utilPlacer.style.left = clamp(event.clientX - 27) + "px"
+		utilPlacer.style.top = clamp(event.clientY - 29) + "px"
+		locationPlacer.style.left = clamp(event.clientX - 11) + "px"
+		locationPlacer.style.top = clamp(event.clientY - 11) + "px"
 	})
 
 	function addNade(x, y, wrapperString, icon) {
@@ -65,6 +87,8 @@
 	
 	function switchType(type) {
 		selectedNade = type
+		locationPlacer.style.display = "none"
+		utilPlacer.style.display = "block"
 		if (selectedNade == "smokes") {
 			utilPlacer.src = "../resources/SmokeIcon.svg"
 		}
@@ -77,6 +101,11 @@
 		if (selectedNade == "grenades") {
 			utilPlacer.src = "../resources/GrenadeIcon.svg"
 		}
+		if (selectedNade == "location") {
+			utilPlacer.src = ""
+			locationPlacer.style.display = "block"
+			utilPlacer.style.display = "none"
+		}
 		selectButton(type)
 		showNades(type)
 	}
@@ -86,6 +115,7 @@
 		document.getElementById('smokes-button').className = ""
 		document.getElementById('flashes-button').className = ""
 		document.getElementById('grenades-button').className = ""
+		document.getElementById('location-button').className = ""
 		document.getElementById(type + '-button').className = "selected"
 	}
 
@@ -94,7 +124,9 @@
 		document.getElementById('molotovs').style.display = "none"
 		document.getElementById('flashes').style.display = "none"
 		document.getElementById('grenades').style.display = "none"
-		document.getElementById(type).style.display = "block"
+		if (type !== "location") {
+			document.getElementById(type).style.display = "block"
+		}
 	}
 
 	function copyJSON() {
