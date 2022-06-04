@@ -4,88 +4,57 @@
 			"x": 322,
 			"y": 277,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Arch%20Left%20Smoke%20From%20B%20Apps",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Arch%20Left%20Smoke%20From%20B%20Apps","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 529,
 			"y": 631,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Stairs%20Smoke%20From%20Ramp",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Stairs%20Smoke%20From%20Ramp","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 668,
 			"y": 619,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Ramp%20Smoke%20From%20CT",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Ramp%20Smoke%20From%20CT","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 321,
 			"y": 222,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Arch%20Right%20Smoke%20From%20Apps",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Arch%20Right%20Smoke%20From%20Apps","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 487,
 			"y": 640,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Jungle%20Smoke%20From%20Ramp",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Jungle%20Smoke%20From%20Ramp","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 436,
 			"y": 795,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20CT%20Smoke%20From%20Ramp",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20CT%20Smoke%20From%20Ramp","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 455,
 			"y": 342,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Short%20Smoke%20From%20Underpass",
-					"x": 0,
-					"y": 0
-				}
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Catwalk%20Smoke%20From%20Underpass","x":443,"y":404},
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Catwalk%20Smoke%20from%20Top%20Mid","x":706,"y":471}
 			]
 		},
 		{
 			"x": 153,
 			"y": 297,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Bench%20Retake%20Smoke%20from%20CT%20Spawn",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Bench%20Retake%20Smoke%20from%20CT%20Spawn", "x": 0, "y": 0}
 			]
 		}
 	],
@@ -94,27 +63,15 @@
 			"x": 471,
 			"y": 743,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Triple%20Box%20Molotov%20from%20Tetris",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Triple%20Box%20Molotov%20from%20Tetris","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 633,
 			"y": 716,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Palace",
-					"x": 736,
-					"y": 758
-				},
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Tetris",
-					"x": 612,
-					"y": 597
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Palace","x": 736,"y": 758},
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Shadows%20Molotov%20from%20Tetris","x": 612,"y": 597}
 			]
 		}
 	],
@@ -123,24 +80,18 @@
 			"x": 629,
 			"y": 658,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Tetris%20Flash%20from%20Shadows",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Tetris%20Flash%20from%20Shadows","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 647,
 			"y": 600,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20A%20Flash%20From%20Ramp",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20A%20Flash%20From%20Ramp","x": 0,"y": 0}
 			]
 		}
 	],
-	"grenades": []
+	"grenades": [
+
+	]
 }
