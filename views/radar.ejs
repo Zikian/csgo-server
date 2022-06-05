@@ -23,6 +23,11 @@
 	</body>
 </html>
 <script>
+	const LOCATION_HALFSIZE = 10
+	const NADE_HALFWIDTH = 25
+	const NADE_HALFHEIGHT = 25
+	
+	let openLocations = null
 	const canvas = document.getElementsByTagName("canvas")[0]
 	const ctx = canvas.getContext('2d')
 	const nades = <%- JSON.stringify(nades) %>;
@@ -44,11 +49,12 @@
 		} else {
 			utilWrapper.addEventListener("click", () => {
 				if (!utilWrapper.isOpen) {
+					hideLocations(openLocations)
 					showLocations(nade, utilWrapper)
+					openLocations = utilWrapper
 					utilWrapper.isOpen = true
 				} else {
 					hideLocations(utilWrapper)
-					utilWrapper.isOpen = false
 				}
 			})
 		}
@@ -78,7 +84,7 @@
 	}
 
 	function switchType(type) {
-		clearCanvas()
+		hideLocations(openLocations)
 		selectButton(type)
 		showNades(type)
 	}
@@ -100,35 +106,36 @@
 	}
 
 	function showLocations(nade, utilWrapper) {
-		const nadeX = nade.x
-		const nadeY = nade.y
-		let distancePercent = 0.1
+		const nadeX = nade.x + NADE_HALFWIDTH
+		const nadeY = nade.y + NADE_HALFHEIGHT
+		let distancePercent = 0
 		const utilLocations = utilWrapper.getElementsByClassName('util-location')
 
 		const interval = setInterval(() => {
 			clearCanvas()
 			for (let i = 0; i < utilLocations.length; i++) {
-				const locationX = nade.locations[i].x
-				const locationY = nade.locations[i].y
+				const locationX = nade.locations[i].x + LOCATION_HALFSIZE
+				const locationY = nade.locations[i].y + LOCATION_HALFSIZE
 				const vectorX = locationX - nadeX
 				const vectorY = locationY - nadeY
-				utilLocations[i].style.left = vectorX * distancePercent + 17 + "px"
-				utilLocations[i].style.top = vectorY * distancePercent + 17	 + "px"
+				utilLocations[i].style.left = nadeX + vectorX * distancePercent - LOCATION_HALFSIZE + "px"
+				utilLocations[i].style.top = nadeY + vectorY * distancePercent - LOCATION_HALFSIZE+ "px"
 				utilLocations[i].style.display = "block"
 
 				ctx.beginPath();
 				ctx.strokeStyle = "white";
 				ctx.lineWidth = 2;
-				ctx.moveTo(nadeX + 25, nadeY + 25);
-				ctx.lineTo(nadeX + vectorX * distancePercent + 27, nadeY + vectorY * distancePercent + 27);
+				ctx.moveTo(nadeX, nadeY);
+				ctx.lineTo(nadeX + vectorX * distancePercent, nadeY + vectorY * distancePercent);
 				ctx.stroke(); 
 			}
 			distancePercent += 0.02
-			if (distancePercent > 1) clearInterval(interval)
+			if (distancePercent >= 1) clearInterval(interval)
 		}, 1);
 	}
 
 	function hideLocations(utilWrapper) {
+		if (!utilWrapper) return
 		const utilLocations = utilWrapper.getElementsByClassName('util-location')
 		clearCanvas()
 		for (let i = 0; i < utilLocations.length; i++) {
@@ -136,6 +143,8 @@
 			utilLocations[i].style.top = 0
 			utilLocations[i].style.display = 'none'
 		}
+		openLocations = null
+		utilWrapper.isOpen = false
 	}
 
 	function clearCanvas() {

@@ -21,6 +21,10 @@
 	</body>
 </html>
 <script>
+	const LOCATION_HALFSIZE = 10
+	const NADE_HALFWIDTH = 27
+	const NADE_HALFHEIGHT = 29
+
 	let lastPlaced = "";
 	let selectedNade = "";
 	const nades = <%- JSON.stringify(nades) %>;
@@ -37,15 +41,17 @@
 	radarImg.src = "../resources/<%- radarImg %>"
 	radarImg.addEventListener("click", event => {
 		if (selectedNade === "location") {
+			locationRect = locationPlacer.getBoundingClientRect()
 			lastPlaced = {
 				href: "",
-				x: clamp(event.clientX - 11),
-				y: clamp(event.clientY - 11)
+				x: clamp(locationRect.x),
+				y: clamp(locationRect.y)
 			}
 		} else {
+			utilRect = utilPlacer.getBoundingClientRect()
 			lastPlaced = {
-				x: clamp(event.clientX - 27),
-				y: clamp(event.clientY - 29),
+				x: clamp(utilRect.x),
+				y: clamp(utilRect.y),
 				locations: [
 					{
 						href: "",
@@ -57,8 +63,8 @@
 		}
 		if (selectedNade !== "location") {
 			addNade(
-				clamp(event.clientX - 27), 
-				clamp(event.clientY - 29),
+				clamp(lastPlaced.x), 
+				clamp(lastPlaced.y),
 				selectedNade, 
 				utilPlacer.src
 			)
@@ -66,10 +72,10 @@
 	})
 
 	document.addEventListener("mousemove", event => {
-		utilPlacer.style.left = clamp(event.clientX - 27) + "px"
-		utilPlacer.style.top = clamp(event.clientY - 29) + "px"
-		locationPlacer.style.left = clamp(event.clientX - 11) + "px"
-		locationPlacer.style.top = clamp(event.clientY - 11) + "px"
+		utilPlacer.style.left = clamp(event.clientX - NADE_HALFWIDTH) + "px"
+		utilPlacer.style.top = clamp(event.clientY - NADE_HALFHEIGHT) + "px"
+		locationPlacer.style.left = clamp(event.clientX - LOCATION_HALFSIZE) + "px"
+		locationPlacer.style.top = clamp(event.clientY - LOCATION_HALFSIZE) + "px"
 	})
 
 	function addNade(x, y, wrapperString, icon) {

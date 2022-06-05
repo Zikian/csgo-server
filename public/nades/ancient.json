@@ -4,55 +4,35 @@
 			"x": 461,
 			"y": 358,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Top%20Mid%20Smoke%20From%20T%20Spawn",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Top%20Mid%20Smoke%20From%20T%20Spawn","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 799,
 			"y": 349,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Back%20Alley%20Smoke",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Back%20Alley%20Smoke","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 394,
 			"y": 441,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Tomb%20Smoke",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Tomb%20Smoke","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 701,
 			"y": 328,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Alley%20Smoke%20from%20Ruins",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Alley%20Smoke%20from%20Ruins","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 676,
 			"y": 571,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Upper%20Smoke%20from%20B%20Site",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Upper%20Smoke%20from%20B%20Site","x": 0,"y": 0}
 			]
 		}
 	],
@@ -61,33 +41,21 @@
 			"x": 805,
 			"y": 563,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Molotov",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Molotov","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 432,
 			"y": 451,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Tomb%20Molotov",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Tomb%20Molotov","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 701,
 			"y": 462,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Ninja%20Molotov%20from%20B%20Doors",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Ninja%20Molotov%20from%20B%20Doors","x": 0,"y": 0}
 			]
 		}
 	],
@@ -96,55 +64,35 @@
 			"x": 815,
 			"y": 476,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Flash",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Flash","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 441,
 			"y": 583,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Mid%20Flash%20From%20T%20Spawn%201",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Mid%20Flash%20From%20T%20Spawn%201","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 821,
 			"y": 575,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Doors%20Flash%20from%20Ruins",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Doors%20Flash%20from%20Ruins","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 702,
 			"y": 393,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Flash%20Behind%20Pillar",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Flash%20Behind%20Pillar","x": 0,"y": 0}
 			]
 		},
 		{
 			"x": 607,
 			"y": 520,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Cheetah%20Flash%20from%20Upper%20B%20Long",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20Cheetah%20Flash%20from%20Upper%20B%20Long","x": 0,"y": 0}
 			]
 		}
 	],
@@ -153,11 +101,7 @@
 			"x": 805,
 			"y": 565,
 			"locations": [
-				{
-					"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Nade",
-					"x": 0,
-					"y": 0
-				}
+				{"href": "obsidian://open?vault=csgo-obsidian&file=Ancient%2FUtility%2FAncient%20B%20Ramp%20Nade","x": 0,"y": 0}
 			]
 		}
 	]
