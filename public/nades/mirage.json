@@ -69,6 +69,13 @@
 	],
 	"molotovs": [
 		{
+			"x":301,
+			"y":163,
+			"locations":[
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Apps%20Molotov%20from%20Trash","x":0,"y":0}
+			]
+		},
+		{
 			"x":596,
 			"y":614,
 			"locations":[
