@@ -91,6 +91,13 @@
 	],
 	"molotovs": [
 		{
+			"x":596,
+			"y":614,
+			"locations":[
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Tetris%20Molotov%20from%20Jungle","x":0,"y":0}
+			]
+		},
+		{
 			"x": 471,
 			"y": 743,
 			"locations": [
