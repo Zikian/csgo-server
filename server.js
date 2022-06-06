@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+const bodyParser = require('body-parser')
 const fs = require('fs')
 const GithubWebHook = require('express-github-webhook');
 const webhookHandler = GithubWebHook({ path: '/postrecieve', secret: 'jrgiw4j9g0023g4jop;df4w80.,.?' });
