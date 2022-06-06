@@ -10,6 +10,8 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+app.use(bodyParser.json());
+app.use(webhookHandler);
 
 const ancientNades = JSON.parse(fs.readFileSync(__dirname + '/public/nades/ancient.json'));
 const mirageNades = JSON.parse(fs.readFileSync(__dirname + '/public/nades/mirage.json'));
