@@ -48,6 +48,7 @@ app.listen(app.get('port'), function () {
 })
 
 webhookHandler.on('push', function (event, repo, data) {
+	console.log('Pulling latest changes...')
 	exec('git pull', (err, stdout, stderr) => {});
 });
 
