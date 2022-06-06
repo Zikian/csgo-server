@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Zikian/csgo-server#readme",
   "devDependencies": {
+    "body-parser": "^1.20.0",
     "ejs": "^3.1.8",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-github-webhook": "^1.0.6"
   }
 }

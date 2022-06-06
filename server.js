@@ -2,6 +2,8 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const fs = require('fs')
+const GithubWebHook = require('express-github-webhook');
+const webhookHandler = GithubWebHook({ path: '/postrecieve', secret: 'jrgiw4j9g0023g4jop;df4w80.,.?' });
 
 app.set('port', 3000)
 app.use(express.static(__dirname + '/public'));
@@ -41,6 +43,6 @@ app.listen(app.get('port'), function () {
   console.log('App is running on port: ' + app.get('port'))
 })
 
-app.post('/postrecieve', function(req, res) {
-	console.log(req.url)
-})
+webhookHandler.on('push', function (event, repo, data) {
+	console.log('hahahaaha')
+});
