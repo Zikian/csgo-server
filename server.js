@@ -40,3 +40,7 @@ app.get('/overpass/edit', function(req, res) {
 app.listen(app.get('port'), function () {
   console.log('App is running on port: ' + app.get('port'))
 })
+
+app.post('/postrecieve', function(req, res) {
+	console.log(req.url)
+})
