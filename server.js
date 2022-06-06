@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const fs = require('fs')
 const GithubWebHook = require('express-github-webhook');
 const webhookHandler = GithubWebHook({ path: '/postrecieve', secret: 'jrgiw4j9g0023g4jop;df4w80.,.?' });
+const { exec } = require('child_process');
 
 app.set('port', 3000)
 app.use(express.static(__dirname + '/public'));
@@ -47,6 +48,6 @@ app.listen(app.get('port'), function () {
 })
 
 webhookHandler.on('push', function (event, repo, data) {
-	console.log('hahahaaha')
-	console.log('ok')
+	exec('git pull', (err, stdout, stderr) => {});
 });
+
