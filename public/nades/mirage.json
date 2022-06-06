@@ -1,6 +1,13 @@
 {
 	"smokes": [
 		{
+			"x":235,
+			"y":370,
+			"locations":[
+				{"href":"obsidian://open?vault=csgo-obsidian&file=Mirage%2FUtility%2FMirage%20Market%20Window%20%20Smoke%20from%20Back%20Alley","x":0,"y":0}
+			]
+		},
+		{
 			"x":392,
 			"y":441,
 			"locations":[
